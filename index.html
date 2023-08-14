@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Fruits</title>
+    <title>🍐 Fruits</title>
 
     <link rel="stylesheet" href="/static/style.css">
 
     <script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Fruits</h1>
-    <ul id="fruits">
-    {{ range . }}
-        {{ block "fruit" . }}
-            <li>{{ .Name }}</li>
+    <header class="header">
+        <h1>🍐 Fruits</h1>
+    </header>
+    <ul id="fruits" class="fruits">
+        {{ range . }}
+            {{ block "fruit" . }}
+                <li>
+                    <span class="fruits-emoji">{{ .Emoji }}</span>
+                    <div class="fruits-name">{{ .Name }}</div>
+                    <span class="fruits-price">{{ .Price }} 🪙</span>
+                </li>
+            {{ end }}
         {{ end }}
-    {{ end }}
-    </ul>  
-
-    <form hx-post="/fruits" hx-target="#fruits" hx-swap="beforeend" hx-indicator="#spinner">
-        <label for="name">Name</label>
-        <input name="name">
-        <button>
-            <span id="spinner" class="htmx-indicator">🍌</span>
-            Add
-        </button>
-    </form>
+    </ul>
 </body>
 </html>

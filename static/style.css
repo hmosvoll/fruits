@@ -1,3 +1,75 @@
 body {
+    font-family: 'Georgia', serif;
     background-color: #E6F3E5;
+    color: #4D4015;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.header {
+    background-color: white;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 2rem 0rem;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+.header > h1 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.fruits {
+    padding: 0;
+    width: 80%;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.fruits > li {
+    background-color: white;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.fruits > li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.fruits-emoji{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 4rem;
+    height: 75%;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.fruits > li:hover .fruits-emoji {
+    font-size: 4.75rem;
+}
+
+.fruits-name, .fruits-price{
+    display: flex;
+    align-items: center;
+    height: 25%;
+}
+
+.fruits-name{
+    justify-content: center;
+    font-size: 1.1rem;
 }
